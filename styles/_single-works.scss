@@ -1,0 +1,122 @@
+@import "variable";
+
+.works {
+  padding: 0px 8%;
+
+  @media screen and (max-width: 480px) {
+    padding: 1rem;
+  }
+
+  &-img {
+    width: 100%;
+
+    & img {
+      width: 100%;
+    }
+  }
+
+  &__table {
+    padding: 3rem;
+    background-color: #f7f7f7;
+    width: 100%;
+
+    & tbody tr {
+      display: flex;
+      text-align: left;
+      margin: 2rem;
+      border-bottom: 1px solid #e7e7e7;
+      box-sizing: border-box;
+      padding-bottom: 8px;
+
+      @media screen and (max-width: 480px) {
+        display: block;
+
+        box-sizing: border-box;
+      }
+
+      & th {
+        width: 40%;
+        display: block;
+
+        @media screen and (max-width: 480px) {
+          width: 100%;
+        }
+      }
+
+      & td {
+        width: 60%;
+        display: block;
+
+        & .select {
+          border: 1px solid #ccc3c3;
+          background-color: #fff;
+          margin: 4px;
+          margin-left: 0;
+          padding: 0px 8px;
+          display: inline-block;
+        }
+
+        @media screen and (max-width: 480px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.contact__prompt {
+  margin: 4rem 0 19rem;
+  padding: 1rem 8% 15rem;
+  background-image: url("..//img/contact-prompt-bg.png");
+  position: relative;
+
+  &-text {
+    width: 50%;
+  }
+
+  &-box {
+    background-color: white;
+    padding: 1rem;
+    display: flex;
+
+    & p:last-of-type {
+      font-size: 0.8rem;
+      margin-left: 1rem;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-cv {
+    display: flex;
+    position: absolute;
+    // margin: 0 5%;
+
+    &-item {
+      background-color: rgb(57, 57, 57);
+      padding: 2rem;
+      width: 50%;
+      transition: all 0.3s;
+      margin-top: 5rem;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      & h3 {
+        font-size: 1.4rem;
+        margin: 1rem 0;
+      }
+
+      & h3,
+      p {
+        color: $cWhite;
+        text-align: center;
+      }
+
+      &:last-of-type {
+        background-color: rgb(38, 38, 38);
+      }
+    }
+  }
+}

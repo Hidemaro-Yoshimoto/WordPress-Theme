@@ -1,0 +1,141 @@
+@import "_variable";
+
+* {
+  color: $cBlack;
+  letter-spacing: 1px;
+  line-height: 1.9;
+  font-family: "メイリオ", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic",
+    sans-serif;
+}
+
+a {
+  color: black;
+}
+
+.cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #0000002e;
+  position: absolute;
+  cursor: pointer;
+  visibility: hidden;
+  transition: all 0.6s;
+  opacity: 0;
+
+  &.move-container {
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+.container {
+  transition: 0.6s;
+
+  &.move-container {
+    transform: translate(-240px, 70px);
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.07);
+    width: 100%;
+    height: 100%;
+
+    @media screen and (max-width: 480px) {
+      transform: translate(-50%, 0.5%);
+    }
+  }
+}
+
+.h2-title {
+  font-weight: bold;
+  font-size: 2.2rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.8rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 1.4rem;
+  }
+
+  &.center {
+    text-align: center;
+  }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $cGray;
+  line-height: 1.7;
+  margin: 0 0 8px;
+  text-align: center;
+
+  @media screen and (max-width: 480px) {
+    font-size: 1rem;
+  }
+
+  &.left {
+    text-align: left;
+    margin-left: 115px;
+    transform: translateX(-115px);
+  }
+}
+
+.horizontal {
+  position: relative;
+  left: $PChorizontalLeft;
+
+  @media screen and (max-width: 480px) {
+    left: $SPhorizontalLeft;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    background-color: $cBlack;
+    top: 50%;
+    left: -$PChorizontalLeft;
+    width: 90px;
+    height: 1px;
+    transform: translateY(-50%);
+
+    @media screen and (max-width: 480px) {
+      width: 50px;
+      left: -$SPhorizontalLeft;
+    }
+  }
+}
+
+.auxiliary-text {
+  margin: 0 0 24px;
+  font-size: 1.2rem;
+
+  @media screen and (max-width: 480px) {
+    font-size: 1rem;
+  }
+}
+
+.btn {
+  width: 100%;
+  padding: 2rem;
+  background-color: #333;
+  color: $cWhite;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  @media screen and (max-width: 480px) {
+    padding: 1rem;
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  }
+}
+
+.contact-prompt {
+  margin-top: 5rem;
+}

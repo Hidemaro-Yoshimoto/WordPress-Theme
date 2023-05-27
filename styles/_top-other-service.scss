@@ -1,0 +1,56 @@
+@import "_variable";
+
+.top-other-service {
+  border-top: 1px solid #ccc;
+  padding-top: 4rem;
+  background-color: $bgcGray;
+
+  @media screen and (max-width: 480px) {
+    &-text {
+      padding: 0 1rem;
+    }
+  }
+
+  &__items {
+    position: relative;
+
+    & li {
+      padding: 4rem;
+      padding: 4rem 1rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background-color: #3a3a3a47;
+        width: 100%;
+        height: 100%;
+        left: -0;
+        top: 0;
+        z-index: 3;
+      }
+    }
+
+    & li h3 {
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+
+    & li h3,
+    li p {
+      color: $cWhite;
+      position: relative;
+      z-index: 5;
+    }
+
+    & li:first-of-type {
+      background: url(../img/top-other-service1.png);
+      background-size: cover;
+    }
+
+    & li:last-of-type {
+      background: url(../img/top-other-service2.png);
+      background-size: cover;
+    }
+  }
+}
+

@@ -1,0 +1,80 @@
+.forte-type {
+  padding: 4rem 2rem 2rem 2rem;
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    padding: none;
+  }
+
+  &__item {
+    width: 30%;
+    max-width: 420px;
+    list-style: none;
+    margin-right: 2.6rem;
+    margin-top: 1rem;
+    border-top: 1px solid #ccc;
+
+    &_img {
+      width: 100%;
+
+      & img {
+        width: 30%;
+        padding: 2rem 2.8rem;
+        display: block;
+        margin: 0 auto;
+
+        @media screen and (max-width: 480px) {
+          width: 23%;
+        }
+      }
+    }
+
+    &_text h3 {
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+
+      @media screen and (max-width: 768px) {
+        font-size: 1.6rem;
+      }
+
+      @media screen and (max-width: 480px) {
+        font-size: 1.1rem;
+      }
+    }
+
+    &:nth-last-of-type(3n + 1) {
+      margin-right: 0;
+    }
+
+    @media screen and (max-width: 1024px) {
+      width: 46%;
+      margin-right: 2rem;
+
+      &:nth-last-of-type(3n + 1) {
+        margin-right: 2rem;
+      }
+
+      &:nth-last-of-type(2n + 1) {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      margin-right: 0;
+      max-width: none;
+
+      &:nth-last-of-type(3n + 1) {
+        margin-right: 0;
+      }
+
+      &_img img {
+        max-width: 185px;
+      }
+    }
+  }
+}
