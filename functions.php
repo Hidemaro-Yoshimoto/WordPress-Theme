@@ -4,6 +4,7 @@ $function_files = [
   'functions/init.php',
   'functions/post.php',
   'functions/breadcrump.php',
+  '/libs/shortcode.php',
 ];
 
 foreach ($function_files as $file) {
@@ -13,8 +14,6 @@ foreach ($function_files as $file) {
     trigger_error("`$file`ファイルが見つかりません", E_USER_ERROR);
   }
 };
-
-
 
 // add_filter('cfs_field_types', 'my_custom_field_type');
 // function my_custom_field_type($field_types)

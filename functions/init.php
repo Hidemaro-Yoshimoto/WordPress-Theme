@@ -52,9 +52,3 @@ function add_my_quicktag()
 
 add_action('admin_print_footer_scripts',  'add_my_quicktag', 100);
 
-// ショートコード追加
-function hukidashi($attr, $content) { 
-  $html = '<div class="box2">' . $content . '</div>';
-  return $html;
-}
-add_shortcode('hukidashi', 'hukidashi');
