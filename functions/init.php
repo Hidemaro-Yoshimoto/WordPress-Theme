@@ -29,26 +29,10 @@ function register_my_menus()
 }
 add_action('after_setup_theme', 'register_my_menus');
 
-// 固定ページのみGtenbergを無効化
-// add_filter('use_block_editor_for_post_type', 'disable_block_editor', 10, 2);
-// function disable_block_editor($use_block_editor, $post_type)
-// {
-//   if ($post_type === 'page') return false;
-//   return $use_block_editor;
-// }
-
-// クイックタグ追加
-function add_my_quicktag()
+//固定ページのみGtenbergを無効化
+function disable_block_editor($use_block_editor, $post_type)
 {
-?>
-  <script type="text/javascript">
-    // QTags.addButton('ID', 'エディタのボタンに表示する名前', '開始タグ', '終了タグ');
-    QTags.addButton('h2', 'h2', '<h2>', '</h2>' + '\n');
-    QTags.addButton('memo', 'メモ風', '<div class="box1">ここに文章を入れる', '</div>');
-    QTags.addButton('div_class', 'div_class', '<div class="">', '</div>');
-  </script>
-<?php
+  if ($post_type === 'page') return false;
+  return $use_block_editor;
 }
-
-add_action('admin_print_footer_scripts',  'add_my_quicktag', 100);
-
+add_filter('use_block_editor_for_post_type', 'disable_block_editor', 10, 2);

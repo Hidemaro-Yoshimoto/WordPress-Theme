@@ -5,6 +5,7 @@ $function_files = [
   'functions/post.php',
   'functions/breadcrump.php',
   '/libs/shortcode.php',
+  '/libs/quicktag.php',
 ];
 
 foreach ($function_files as $file) {
