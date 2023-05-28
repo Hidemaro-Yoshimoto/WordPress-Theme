@@ -1172,4 +1172,37 @@ input:focus {
 
 .color-red {
   color: red;
+}
+
+.box1 {
+  position: relative;
+  background: #eaf5f9;
+  padding: 1.5em;
+  border: solid 1px #27acd9;
+}
+.box1::after {
+  position: absolute;
+  content: "";
+  left: -1px;
+  top: -1px;
+  border-style: solid;
+  border-width: 0 0 20px 20px;
+  border-color: #fff #fff #27acd9;
+}
+
+.box2 {
+  position: relative;
+  padding: 1em;
+  color: #fff;
+  background: #27acd9;
+}
+.box2::after {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 50px;
+  border: 15px solid transparent;
+  border-top: 15px solid #27acd9;
+  width: 0;
+  height: 0;
 }/*# sourceMappingURL=style.css.map */

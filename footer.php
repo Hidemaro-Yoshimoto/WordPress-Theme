@@ -7,12 +7,15 @@
       <p>東京都千代田区丸の内1丁目</p>
     </div>
     <ul class="footer-nav__list">
-      <li><a href="/">トップ</a></li>
-      <li><a href="">サービス</a></li>
-      <li><a href="">制作実績</a></li>
-      <li><a href="">会社案内</a></li>
-      <li><a href="">ブログ</a></li>
-      <li><a href="">お問い合わせ</a></li>
+      <?php
+
+      wp_nav_menu(array(
+        'theme_location' => 'global-menu',
+        'container' => '', //<div>を出力しない
+        'items_wrap' => '%3$s', //<ul>を出力しない
+      ));
+
+      ?>
     </ul>
   </div>
 
@@ -25,4 +28,5 @@
 <?php wp_footer(); ?>
 
 </body>
+
 </html>
