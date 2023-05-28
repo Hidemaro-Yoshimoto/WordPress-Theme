@@ -14,6 +14,8 @@
     </div>
   </section>
 
+  <?php get_template_part('/template-parts/works'); ?>
+
   <section class="top-service">
     <div class="top-service-wrap">
       <h2 class="h2-title">私たちの提供するサービス</h2>

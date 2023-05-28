@@ -3,6 +3,22 @@
 <div class="archive-works">
   <?php breadcrumb(); ?>
 
+  <?php
+  // $cat = get_category(1);
+  // echo "<pre>";
+  // var_dump($cat);
+  // echo "</pre>";
+  // echo $cat->name;
+
+  // echo "<br><br>";
+
+  // $cat = get_category(1, 'ARRAY_A');
+  // echo "<pre>";
+  // var_dump($cat);
+  // echo "</pre>";
+  // echo $cat['name'];
+  ?>
+
   <h2 class="h2-title">中小・中堅のBtoB企業を中心に着実に実績を増やしています。</h2>
   <p class="archive-works-text">Web制作はもちろん、展示会パネルやパンフレットなどBtoB企業に必要なクリエイティブ全般の制作を承っております。</p>
 
@@ -15,6 +31,7 @@
             <div class="archive-works__item-img">
               <img src="<?php echo CFS()->get('thumbnail'); ?>" alt="">
             </div>
+            <?php the_time('Y-m-d'); ?>
             <div class="archive-works__item-categories">
               <?php
               $values = CFS()->get('category');

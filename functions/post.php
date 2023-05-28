@@ -3,6 +3,10 @@
 // 投稿のアーカイブページ作成
 function post_has_archive($args, $post_type)
 {
+  // echo "<pre>";
+  // var_dump($post_type);
+  // echo "</pre>";
+
   if ('post' == $post_type) {
     $args['rewrite'] = true;
     $args['has_archive'] = 'blog';
@@ -41,7 +45,7 @@ add_action('init', 'cpt_register_works');
 // カテゴリー追加
 function cpt_register_dep()
 {
-  $labels = ['singular_name' => 'dep'];
+  $labels = ['singular_name' => 'dep']; // 'depを指定してget_the_term_listで取得'
 
   $args = [
     'label' => 'カテゴリー',

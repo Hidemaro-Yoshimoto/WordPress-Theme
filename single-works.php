@@ -4,7 +4,14 @@
   <div class="works">
     <?php breadcrumb(); ?>
 
+    <?php
+    // echo "<pre>";
+    // var_dump($post);
+    // echo "</pre>";
+    ?>
+
     <h2 class="h2-title"><?php echo CFS()->get('client'); ?></h2>
+    <?php the_time('Y-m-d'); ?>
 
     <div class="works-img">
       <img src="<?php echo CFS()->get('thumbnail'); ?>" alt="">
@@ -21,10 +28,27 @@
               <th>業種</th>
               <td>
                 <?php
-                $values = CFS()->get('category');
-                foreach ($values as $value) :
+                // $test = $post;
+                // echo "<pre>";
+                // var_dump($test);
+                // echo "</pre>";
+
+                // get_the_term_list() ・・・リンク付きになるからget_the_termsを使用
+                // リンク付きがいいならlist
+
+                // $values = get_the_terms_list($post->ID, 'dep', '<span class="select">', '</span><span class="select">', '</span>');
+                $values = get_the_terms($post->ID, 'dep');
+
+                // echo "<pre>";
+                // var_dump($values);
+                // echo "</pre>";
+
+                foreach($values as $value):
+                  // echo "<pre>";
+                  // var_dump($value);
+                  // echo "</pre>";
                 ?>
-                  <span class="select"><?php echo $value; ?></span>
+                <span class="select"><?php echo $value->name ?></span>
                 <?php endforeach; ?>
               </td>
             </tr>
