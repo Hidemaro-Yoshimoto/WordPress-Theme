@@ -140,6 +140,10 @@ a {
   margin-top: 5rem;
 }
 
+.flatpickr-confirm.visible {
+  background: gainsboro;
+}
+
 * {
   color: #333;
   letter-spacing: 1px;

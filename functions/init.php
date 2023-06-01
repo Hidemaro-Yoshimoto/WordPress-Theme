@@ -20,9 +20,11 @@ add_action('wp_footer', 'add_enqueue_scripts');
 function add_flatpicker() {
   wp_enqueue_style('flatpicker_css', 'https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css');
   wp_enqueue_style('flatpicker_css2', 'https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/themes/material_blue.css');
+  wp_enqueue_style('flatpicker_css3', 'https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/confirmDate/confirmDate.min.css');
   wp_enqueue_script('flatpicker_js', 'https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js');
   wp_enqueue_script('flatpicker_js2', 'https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/l10n/ja.js');
-  wp_enqueue_script('flatpicker_js3', get_template_directory_uri() . '/js/flatpicker.js');
+  wp_enqueue_script('flatpickr_js3', 'https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/confirmDate/confirmDate.js');
+  wp_enqueue_script('flatpicker_js4', get_template_directory_uri() . '/js/flatpicker.js');
 }
 add_action('wp_footer', 'add_flatpicker');
 
