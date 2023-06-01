@@ -1095,13 +1095,13 @@ a {
   height: 100%;
 }
 
-#wpcf7 {
+.contact-page {
   padding: 2rem 6rem;
 }
 
 .contact-content {
-  width: 800px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 3rem auto 0;
 }
 
 .contact-content input,
@@ -1109,48 +1109,79 @@ textarea {
   padding: 16px 25px;
   border: solid 1px #ccc;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-content textarea:focus,
 input:focus {
-  border-color: dodgerBlue;
-  box-shadow: 0 0 8px 0 dodgerBlue;
+  border-color: rgb(56, 56, 57);
+  box-shadow: 0 0 8px 0 rgb(56, 56, 57);
 }
 
 .contact-content-inner {
   display: flex;
   align-items: center;
 }
-
-.contact-content-inner dt {
-  width: 220px;
+@media screen and (max-width: 768px) {
+  .contact-content-inner {
+    display: block;
+  }
 }
 
-.contact-content-inner dd {
-  width: 580px;
+.contact-content-inner th {
+  width: 20%;
+  margin-right: 1rem;
+  text-align: left;
+}
+@media screen and (max-width: 768px) {
+  .contact-content-inner th {
+    display: block;
+    width: 100%;
+  }
 }
 
-.contact-content dl:not(:first-child) {
+.contact-content-inner td {
+  width: 80%;
+}
+@media screen and (max-width: 768px) {
+  .contact-content-inner td {
+    display: block;
+    width: 100%;
+  }
+}
+
+.contact-content tr:not(:first-child) {
   padding-top: 20px;
   border-top: solid 1px #ccc;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+  .contact-content tr:not(:first-child) {
+    border: none;
+  }
 }
 
-.contact-content dl {
+.contact-content tr {
   padding-bottom: 20px;
 }
 
 [type=submit] {
   cursor: pointer;
-  width: 300px;
-  border-radius: 35px;
+  border-radius: 5px;
   text-align: center;
   box-sizing: border-box;
-  padding: 20px 0;
-  background: #ff9600;
+  padding: 10px 0;
+  background: #000;
   color: #fff;
   font-weight: bold;
   margin: 0 auto;
   display: block;
+  width: 200px;
+  transition: all 0.3s;
+}
+[type=submit]:hover {
+  background-color: #fff;
+  color: #333;
 }
 
 .wpcf7-not-valid-tip {

@@ -1,51 +1,82 @@
-#wpcf7 {
+@import "_variable";
+
+.contact-page {
   padding: 2rem 6rem;
+
+}
+
+#wpcf7 {
 }
 
 .contact-content {
-  width: 800px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 3rem auto 0;
 }
 .contact-content input,
 textarea {
   padding: 16px 25px;
   border: solid 1px #ccc;
   width: 100%;
+  box-sizing: border-box;
 }
 .contact-content textarea:focus,
 input:focus {
-  border-color: dodgerBlue;
-  box-shadow: 0 0 8px 0 dodgerBlue;
+  border-color: rgb(56, 56, 57);
+  box-shadow: 0 0 8px 0 rgb(56, 56, 57);
 }
 .contact-content-inner {
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
 }
-.contact-content-inner dt {
-  width: 220px;
+.contact-content-inner th {
+  width: 20%;
+  margin-right: 1rem;
+  text-align: left;
+  @media screen and (max-width: 768px) {
+    display: block;
+    width: 100%;
+  }
 }
-.contact-content-inner dd {
-  width: 580px;
+.contact-content-inner td {
+  width: 80%;
+  @media screen and (max-width: 768px) {
+    display: block;
+    width: 100%;
+  }
 }
-.contact-content dl:not(:first-child) {
+.contact-content tr:not(:first-child) {
   padding-top: 20px;
   border-top: solid 1px #ccc;
+  box-sizing: border-box;
+  @media screen and (max-width: 768px) {
+    border: none;
+  }
 }
-.contact-content dl {
+.contact-content tr {
   padding-bottom: 20px;
 }
 [type="submit"] {
   cursor: pointer;
-  width: 300px;
-  border-radius: 35px;
+  border-radius: 5px;
   text-align: center;
   box-sizing: border-box;
-  padding: 20px 0;
-  background: #ff9600;
-  color: #fff;
+  padding: 10px 0;
+  background: #000;
+  color: $cWhite;
   font-weight: bold;
   margin: 0 auto;
   display: block;
+  width: 200px;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #fff;
+    color: $cBlack;
+  }
 }
 .wpcf7-not-valid-tip {
   margin-top: 10px;
