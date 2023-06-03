@@ -60,7 +60,7 @@
   margin: 2em 0;
 }
 .box4 p {
-  margin: 0; 
+  margin: 0;
   padding: 0;
 }
 
@@ -70,6 +70,111 @@
   margin: 2em 0;
 }
 .box5 p {
-  margin: 0; 
+  margin: 0;
   padding: 0;
+}
+
+// 会話の吹き出し（右から左に）
+.kaiwa_right_to_left {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-width: 870px;
+  margin: 0 auto;
+  align-items: flex-start;
+  margin-bottom: 1em;
+}
+
+.kaiwa_right_to_left .text_wrap {
+  position: relative;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-end;
+  width: calc(100% - 118px);
+}
+
+/*吹き出しの三角部分*/
+.kaiwa_right_to_left .text_wrap::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -29px;
+  transform: translateY(-50%);
+  border: 15px solid transparent;
+  border-left: 15px solid #eceefe;
+}
+
+.kaiwa_right_to_left .text_wrap p {
+  background: #eceefe;
+  padding: 0.8em 1em;
+  border-radius: 11px;
+}
+
+.kaiwa_right_to_left .icons_wrap div {
+  text-align: center;
+  top: -1em;
+}
+
+.kaiwa_right_to_left .icons_wrap div img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.kaiwa_right_to_left .icons_wrap p {
+  margin-bottom: 0.25em;
+  text-align: center;
+}
+
+// 会話の吹き出し（左から右に）
+.kaiwa_left_to_right {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  position: relative;
+  max-width: 870px;
+  margin: 0 auto;
+  align-items: flex-start;
+  margin-bottom: 1em;
+}
+
+.kaiwa_left_to_right .text_wrap {
+  position: relative;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-start;
+  width: calc(100% - 118px);
+}
+
+/*吹き出しの三角部分*/
+.kaiwa_left_to_right .text_wrap::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -29px;
+  transform: translateY(-50%);
+  border: 15px solid transparent;
+  border-right: 15px solid #eceefe;
+}
+
+.kaiwa_left_to_right .text_wrap p {
+  background: #eceefe;
+  padding: 0.8em 1em;
+  border-radius: 11px;
+}
+
+.kaiwa_left_to_right .icons_wrap div {
+  text-align: center;
+  top: -1em;
+}
+
+.kaiwa_left_to_right .icons_wrap div img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.kaiwa_left_to_right .icons_wrap p {
+  margin-bottom: 0.25em;
+  text-align: center;
 }

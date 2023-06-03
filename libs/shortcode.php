@@ -75,3 +75,23 @@ function husen($attr)
 };
 add_shortcode('husen', 'husen');
 
+// 会話の吹き出し（右から左に）
+function kaiwa_right_to_left($attr, $content)
+{
+  
+  $text_wrap = '<div class="text_wrap"><p>' . $content . '</p></div>';
+  $icon_wrap = '<div class="icons_wrap"><div><img src="' . get_template_directory_uri() . '/img/adword.png' . '"></div><p>編集者</p></div>';
+  $html = '<div class="kaiwa_right_to_left">' . $text_wrap . $icon_wrap . '</div>';
+  return $html;
+}
+add_shortcode('kaiwa_right_to_left', 'kaiwa_right_to_left');
+
+// 会話の吹き出し（左から右に）
+function kaiwa_left_to_right($attr, $content)
+{
+  $text_wrap = '<div class="text_wrap"><p>' . $content . '</p></div>';
+  $icon_wrap = '<div class="icons_wrap"><div><img src="' . get_template_directory_uri() . '/img/adword.png' . '"></div><p>編集者</p></div>';
+  $html = '<div class="kaiwa_left_to_right">' . $text_wrap . $icon_wrap . '</div>';
+  return $html;
+}
+add_shortcode('kaiwa_left_to_right', 'kaiwa_left_to_right');
