@@ -35,6 +35,7 @@
   }
 }
 
+// コメントボックス（カスタマイズ）
 .box3 {
   border: 1px solid #27acd9;
   background: #eaf5f9;
@@ -51,4 +52,24 @@
     border-radius: 5px 5px 0 0;
     margin-top: 1rem;
   }
+}
+
+// 背景塗りつぶし
+.box4 {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+}
+.box4 p {
+  margin: 0; 
+  padding: 0;
+}
+
+// 付箋風
+.box5 {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+}
+.box5 p {
+  margin: 0; 
+  padding: 0;
 }

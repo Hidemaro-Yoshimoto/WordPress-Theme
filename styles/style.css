@@ -1258,4 +1258,24 @@ input:focus {
   margin-bottom: 0;
   border-radius: 5px 5px 0 0;
   margin-top: 1rem;
+}
+
+.box4 {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+}
+
+.box4 p {
+  margin: 0;
+  padding: 0;
+}
+
+.box5 {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+}
+
+.box5 p {
+  margin: 0;
+  padding: 0;
 }/*# sourceMappingURL=style.css.map */
