@@ -178,3 +178,58 @@
   margin-bottom: 0.25em;
   text-align: center;
 }
+
+// リスト ボックスシャドウ
+.list_boxshadow {
+  background: #f5f4f4; /*灰色に*/
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px silver;
+  padding: 0.5em 0.5em 0.5em 2em;
+  margin-bottom: 1rem;
+
+  & li {
+    line-height: 1.5;
+    padding: 0.5em 0;
+  }
+}
+
+// リスト 鉛筆マーク付き
+.list_pencil_icon {
+  margin-bottom: 1rem;
+  
+  & li {
+    color: black;
+    position: relative;
+    background: #f1f8ff; /*バーの色*/
+    line-height: 1.5;
+    padding: 0.5em;
+    margin-bottom: 4px;
+    border-left: solid 35px #5c9ee7; /*先の色＝アイコン裏の色*/
+    list-style-type: none !important;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      padding: 0.5em;
+      width: 1.2em;
+      text-align: center;
+      left: -35px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    & span {
+      position: absolute;
+      display: inline-block;
+      top: 63%;
+      left: -31px;
+      width: 23px;
+      transform: translateY(-50%);
+
+      & img {
+        width: 100%;
+      }
+    }
+  }
+}

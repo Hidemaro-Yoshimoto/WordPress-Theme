@@ -78,7 +78,7 @@ add_shortcode('husen', 'husen');
 // 会話の吹き出し（右から左に）
 function kaiwa_right_to_left($attr, $content)
 {
-  
+
   $text_wrap = '<div class="text_wrap"><p>' . $content . '</p></div>';
   $icon_wrap = '<div class="icons_wrap"><div><img src="' . get_template_directory_uri() . '/img/adword.png' . '"></div><p>編集者</p></div>';
   $html = '<div class="kaiwa_right_to_left">' . $text_wrap . $icon_wrap . '</div>';
@@ -95,3 +95,74 @@ function kaiwa_left_to_right($attr, $content)
   return $html;
 }
 add_shortcode('kaiwa_left_to_right', 'kaiwa_left_to_right');
+
+// リスト ボックスシャドウ
+function list_boxshadow($attr)
+{
+  $attr = shortcode_atts([
+    'wrap' => 'ul',
+    'list1' => 'リストアイテム1',
+    'list2' => 'リストアイテム2',
+    'list3' => '',
+    'list4' => '',
+    'list5' => '',
+  ], $attr);
+
+  $wrap = $attr['wrap'];
+  $list1 = "<li>" . $attr['list1'] . "</li>";
+  $list2 = "<li>" . $attr['list2'] . "</li>";
+  $list3 = "<li>" . $attr['list3'] . "</li>";
+  $list4 = "<li>" . $attr['list4'] . "</li>";
+  $list5 = "<li>" . $attr['list5'] . "</li>";
+  $list_items = '';
+
+  if (empty($attr['list3'])) {
+    $list_items .= $list1 . $list2;
+  } elseif (empty($attr['list4'])) {
+    $list_items .= $list1 . $list2 . $list3;
+  } elseif (empty($attr['list5'])) {
+    $list_items .= $list1 . $list2 . $list3 . $list4;
+  } else {
+    $list_items .= $list1 . $list2 . $list3 . $list4 . $list5;
+  }
+
+  return "<$wrap class='list_boxshadow'>$list_items</$wrap>";
+}
+add_shortcode('list_boxshadow', 'list_boxshadow');
+
+// リスト 鉛筆マーク付き
+function list_pencil_icon($attr)
+{
+  $attr = shortcode_atts([
+    'list1' => 'リストアイテム1',
+    'list2' => 'リストアイテム2',
+    'list3' => '',
+    'list4' => '',
+    'list5' => '',
+  ], $attr);
+
+  $li_start = "<li><span><img src=" . get_template_directory_uri() . "/img/pencil.png" . "></span>";
+  $li_end = "</li>";
+  $list_array = [];
+
+  for ($i = 1; $i < count($attr) + 1; $i++) {
+    $item = $li_start . $attr["list$i"] . $li_end;
+    array_push($list_array, $item);
+  }
+  // var_dump($list_array);
+
+  foreach($list_array as $key => $val) {
+    if(empty(strip_tags($val))) {
+      unset($list_array[$key]);
+    }
+  }
+  // var_dump($list_array);
+  
+  $list_items = '';
+  foreach($list_array as $list) {
+    $list_items .= $list;
+  }
+
+  return "<ul class='list_pencil_icon'>$list_items</ul>";
+}
+add_shortcode('list_pencil_icon', 'list_pencil_icon');
