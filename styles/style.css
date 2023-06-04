@@ -1429,4 +1429,29 @@ input:focus {
 }
 .list_pencil_icon li span img {
   width: 100%;
+}
+
+.simple-list__wrap {
+  background: #fcfcfc; /*背景色*/
+  padding: 0.5em 0.5em 0.5em 2em; /*ボックス内の余白*/
+  border: solid 3px gray; /*線の種類 太さ 色*/
+  margin-bottom: 2rem;
+}
+.simple-list__wrap li {
+  line-height: 1.5; /*文の行高*/
+  padding: 0.5em 0; /*前後の文との余白*/
+}
+
+.stitch-list_wrap {
+  background: #fffde8;
+  box-shadow: 0px 0px 0px 10px #fffde8; /*線の外側*/
+  border: dashed 2px #ffb03f; /*破線*/
+  border-radius: 9px;
+  margin-left: 10px; /*はみ出ないように調整*/
+  margin-right: 10px; /*はみ出ないように調整*/
+  padding: 0.5em 0.5em 0.5em 2em;
+}
+.stitch-list_wrap li {
+  line-height: 1.5;
+  padding: 0.5em 0;
 }/*# sourceMappingURL=style.css.map */

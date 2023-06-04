@@ -17,7 +17,8 @@ function add_enqueue_scripts()
 add_action('wp_footer', 'add_enqueue_scripts');
 
 // FlatPicker 読み込み
-function add_flatpicker() {
+function add_flatpicker()
+{
   wp_enqueue_style('flatpicker_css', 'https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css');
   wp_enqueue_style('flatpicker_css2', 'https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/themes/material_blue.css');
   wp_enqueue_style('flatpicker_css3', 'https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/confirmDate/confirmDate.min.css');
@@ -48,3 +49,11 @@ function disable_block_editor($use_block_editor, $post_type)
   return $use_block_editor;
 }
 add_filter('use_block_editor_for_post_type', 'disable_block_editor', 10, 2);
+
+// ショートコードの所で無駄な<p>や<br>を消す
+// 全然関係ないところのも消すかも
+function shape_text(){
+  remove_filter( 'the_content', 'do_shortcode', 11 );
+  add_filter('the_content', 'do_shortcode', 1);
+}
+add_action('init', 'shape_text');

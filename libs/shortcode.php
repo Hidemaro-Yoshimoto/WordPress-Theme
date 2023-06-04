@@ -157,7 +157,7 @@ function list_pencil_icon($attr)
     }
   }
   // var_dump($list_array);
-  
+
   $list_items = '';
   foreach($list_array as $list) {
     $list_items .= $list;
@@ -166,3 +166,28 @@ function list_pencil_icon($attr)
   return "<ul class='list_pencil_icon'>$list_items</ul>";
 }
 add_shortcode('list_pencil_icon', 'list_pencil_icon');
+
+// -------------------------------
+// 下のリストショートコードと組み合わせて使用
+function list_wrap($attr, $content) {
+  $attr = shortcode_atts([
+    'tags' => 'ul',
+    'class' => '',
+  ], $attr);
+
+  // ショートコードが渡ってきても使用できる用に変換
+  $content = do_shortcode (shortcode_unautop ($content)); 
+
+  $wrap = $attr['tags'];
+  $class = $attr['class'];
+
+  return "<$wrap class='$class'>$content</$wrap>";
+}
+add_shortcode('list_wrap', 'list_wrap');
+
+function list_item($attr, $content) {
+  
+  return "<li>$content</li>";
+}
+add_shortcode('list_item', 'list_item');
+// -------------------------------

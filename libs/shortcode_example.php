@@ -32,3 +32,16 @@
 [list_pencil_icon list1=リストアイテム1 list2=リストアイテム2]
 
 [list_pencil_icon list1=リストアイテム1 list2=リストアイテム2 list3=リストアイテム3  list4=リストアイテム4]
+
+<!-- リスト ショートコードの組み合わせ -->
+[list_wrap class=simple-list__wrap]
+[list_item]リストのアイテム1です。[/list_item]
+[list_item]リストのアイテム2です。[/list_item]
+[list_item]リストのアイテム3です。[/list_item]
+[/list_wrap]
+
+[list_wrap class=stitch-list_wrap]
+[list_item]リストのアイテム1です。[/list_item]
+[list_item]リストのアイテム2です。[/list_item]
+[list_item]リストのアイテム3です。[/list_item]
+[/list_wrap]
