@@ -1209,28 +1209,28 @@ input:focus {
   color: red;
 }
 
-.service {
+.acf-service {
   display: flex;
-  margin: 4rem 0;
+  margin: 1rem;
 }
-.service__img {
+.acf-service__img {
   width: 50%;
 }
-.service__img img {
+.acf-service__img img {
   width: 100%;
 }
-.service__text {
+.acf-service__text {
   width: 50%;
   padding: 0 1rem;
 }
 @media screen and (max-width: 480px) {
-  .service {
+  .acf-service {
     display: block;
   }
-  .service__img {
+  .acf-service__img {
     width: 100%;
   }
-  .service__text {
+  .acf-service__text {
     width: 100%;
     margin-top: 1rem;
     box-sizing: border-box;

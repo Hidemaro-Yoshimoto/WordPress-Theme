@@ -2,6 +2,37 @@
 /*==================================
 ショートコード追加
 ==================================*/
+function service_child_acf($attr)
+{
+  $attr = shortcode_atts([
+    'id' => ''
+  ], $attr);
+  $id = $attr['id'];
+
+  $imgTag = '';
+  if (get_field('service_img', $id)) {
+    $img = get_field('service_img', $id);
+    $img = $img['url'];
+    $imgTag = "<img src='$img'>";
+  } else {
+    $imgTag = '<img src="http://localhost/wordpress/wp-content/uploads/2023/05/no-image.jpg" alt="">';
+  };
+
+  $img_wrap = "<div class='acf-service__img'>$imgTag</div>";
+
+  $ttl = get_field('service_title', $id);
+  $content = get_field('service_content', $id);
+  $h1 = "<h1>$ttl</h1>";
+  $p = "<p>$content</p>";
+  $text = "<div class='acf-service__text'>$h1 $p</div>";
+
+  $link = get_the_permalink($id);
+  $html = "<a href='$link' class='acf-service'>$img_wrap $text</a>";
+
+  return $html;
+}
+add_shortcode('service_child_acf', 'service_child_acf');
+
 function hukidashi($attr, $content)
 {
   $html = '<div class="box2">' . $content . '</div>';
@@ -151,15 +182,15 @@ function list_pencil_icon($attr)
   }
   // var_dump($list_array);
 
-  foreach($list_array as $key => $val) {
-    if(empty(strip_tags($val))) {
+  foreach ($list_array as $key => $val) {
+    if (empty(strip_tags($val))) {
       unset($list_array[$key]);
     }
   }
   // var_dump($list_array);
 
   $list_items = '';
-  foreach($list_array as $list) {
+  foreach ($list_array as $list) {
     $list_items .= $list;
   }
 
@@ -169,14 +200,15 @@ add_shortcode('list_pencil_icon', 'list_pencil_icon');
 
 // -------------------------------
 // 下のリストショートコードと組み合わせて使用
-function list_wrap($attr, $content) {
+function list_wrap($attr, $content)
+{
   $attr = shortcode_atts([
     'tags' => 'ul',
     'class' => '',
   ], $attr);
 
   // ショートコードが渡ってきても使用できる用に変換
-  $content = do_shortcode (shortcode_unautop ($content)); 
+  $content = do_shortcode(shortcode_unautop($content));
 
   $wrap = $attr['tags'];
   $class = $attr['class'];
@@ -185,8 +217,9 @@ function list_wrap($attr, $content) {
 }
 add_shortcode('list_wrap', 'list_wrap');
 
-function list_item($attr, $content) {
-  
+function list_item($attr, $content)
+{
+
   return "<li>$content</li>";
 }
 add_shortcode('list_item', 'list_item');
