@@ -1209,6 +1209,34 @@ input:focus {
   color: red;
 }
 
+.service {
+  display: flex;
+  margin: 4rem 0;
+}
+.service__img {
+  width: 50%;
+}
+.service__img img {
+  width: 100%;
+}
+.service__text {
+  width: 50%;
+  padding: 0 1rem;
+}
+@media screen and (max-width: 480px) {
+  .service {
+    display: block;
+  }
+  .service__img {
+    width: 100%;
+  }
+  .service__text {
+    width: 100%;
+    margin-top: 1rem;
+    box-sizing: border-box;
+  }
+}
+
 .box1 {
   position: relative;
   background: #eaf5f9;
